@@ -82,7 +82,7 @@ number:
 
 # pull in this code
 external_components:
-  - source: github://hinathan/neopixel_aggregator@main
+  - source: github://hinathan/neopixel_aggregator
 
 # associate the above LED strand with entities and colors
 neopixel_aggregator:
