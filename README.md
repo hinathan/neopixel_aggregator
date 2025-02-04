@@ -1,14 +1,46 @@
 # neopixel_aggregator
-External Component for ESPHome for building physical dashboards using addressable LEDs and the Neopixel library
+This is an External Component for ESPHome for building 'physical' dashboards using addressable LEDs and the Neopixel library. When a lamp is on or a door is open in my house, the corresponding LED is illuminated on the dashboard. Anything you can track with Home Assistant can be visualized. Importantly, when nothing is 'amiss' then all the LEDs are off and my bedroom stays dark and distraction-free.
 
-Connect a WS2811 LED strand to your device with the LEDs arranged in a way which makes sense to you for the sensors and states you are trying to represent.
-
-I used a laser cutter to etch an outline of my home's floorplan and assigned entity ids for each relevant location. That all gets stuffed into a suitably-sized shadow box frame purchased from Ikea but anything similar will do.
-
-If you don't have access to a CNC or laser cutter, you can also drill holes with a hand drill and use hot glue to connect LEDs behind those holes. 
+<img src="https://github.com/user-attachments/assets/221bfc56-1991-4098-9181-28954e442963" width="512" />
 
 
-My yaml looks like this:
+# Construction
+Connect a WS2811 LED strand to your ESP device with the LEDs arranged in a way which makes sense to you for the sensors and states you are trying to represent.
+
+I used a laser cutter to etch an outline of my home's floorplan with holes cut out for each LED:
+
+<img src="https://github.com/user-attachments/assets/41511434-a303-4719-9b1a-b1649b7faf01" width="256" />
+
+The LEDs press fit into the holes:
+
+<img src="https://github.com/user-attachments/assets/fe184a68-0b36-4963-bdc2-17e98b7b4dd0" width="256" />
+
+In the ESPHome device's YAML I assigned entity ids for each relevant location.
+
+That all gets stuffed into a suitably-sized shadow box frame purchased from Ikea but anything similar will do.
+
+If you don't have access to a CNC or laser cutter, you can also drill holes with a hand drill and use hot glue to connect LEDs behind those holes.
+
+Exmaple of hot-glued LEDs - I suggest doing this over a silicone baking sheet or similar to prevent sticking to your work surface.
+
+<img src="https://github.com/user-attachments/assets/076806af-38b7-4642-bb7d-6a6efb0a0c44" width="512" />
+
+
+
+
+# Parts used:
+ Any similar items should work, check your parts bin first!
+- GLEDOPTO ESP32 WLED LED Strip Controller https://a.co/d/0n4RgXz (I prefer these to the ESP8266 versions, more RAM etc)
+- LED strand for press-fit https://a.co/d/5F25R7t
+- LED strand for hot-glue https://a.co/d/dz51We0
+
+
+# Alternative applications:
+- Tuck an LED and controller under/behind a piece of furniture so if anything is left on or ajar, you see an indicative color glow, otherwise dark is good.
+- Make an "Everything Is Ok" light for your front yard so you can see that you have accouned for all lights/doors/locks/HVAC/etc on your way out. There are  26mm addressable LEDs like these https://www.aliexpress.us/item/3256806159525547.html which work well for this application.
+
+
+My YAML looks like this:
 
 
 ```
